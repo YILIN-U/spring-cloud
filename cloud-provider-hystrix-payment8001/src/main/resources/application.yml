@@ -1,0 +1,25 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-payment-hystrix-serice
+
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: payment8001
+    prefer-ip-address: true
+  #    Eureka服务端向客户端发送心跳的时间间隔,单位30秒
+  #    lease-renewal-interval-in-seconds: 1
+  #   Eureka服务端在收到最后一次心跳的等待时间上线,单位90秒,超时将剔除服务
+  #    lease-expiration-duration-in-seconds: 2
+  #    发送时间
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      #      集群版
+#      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+#      单机版
+      defaultZone: http://eureka7001.com:7001/eureka

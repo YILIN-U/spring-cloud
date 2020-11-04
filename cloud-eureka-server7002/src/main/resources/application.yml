@@ -1,0 +1,14 @@
+server:
+  port: 7002
+
+eureka:
+  instance:
+    hostname: eureka7002.com
+  client:
+    #false表示不向注册中兴注册自己
+    register-with-eureka: false
+    #    false表示自己就是注册中心,职责就是维护实例,不需要检索服务
+    fetch-registry: false
+    service-url:
+      #      设置与eureka sever交互的地址,和注册服务都需要依赖这个地址
+      defaultZone: http://eureka7001.com:7001/eureka/
